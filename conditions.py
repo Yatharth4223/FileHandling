@@ -3,7 +3,8 @@
 class Conditions:
     #def createDictionary(self,key,values)
     def createDictionary(self,key,values):
-        pass
+        self._dictionary ={key:values}
+        return self.getDictionary()
 
     #def readDictionary(self,key,values)
     def readDictionary(self,key,values):
