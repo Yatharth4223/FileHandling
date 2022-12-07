@@ -35,7 +35,6 @@ class App:
                 if searchReturn == "No dictionary exists!":
                     raise NoDictionaryError
                 elif searchReturn == False:
-                    print("No ISBN number exists for this object!")
                     keyValue = input("Now enter a key value to search the resource(key valus is the ISBN number!): ")
                     searchReturn = self._conditionInstance.searchDictionary(None,keyValue)
                     if searchReturn =="Value not found!":
@@ -46,7 +45,7 @@ class App:
                     print(f"Your key has been found and it belongs to the ISBN number: {searchReturn}")
             
             if choice==3:
-                keyValue = int(input("To add a new book or change an existing book, enter the new book's ISBN number: "))
+                keyValue = input("To add a new book or change an existing book, enter the new book's ISBN number:")
                 #numOfValues =int(input(f"Enter how many attributes are there for your book: "))
                 for index in range(0,2):
                     value =input(f"Enter the value: ")
@@ -59,7 +58,13 @@ class App:
 
 
             if choice==4:
-                pass
+                keyValue = input("Enter the key value to be deleted: ")
+                searchReturn = self._conditionInstance.searchDictionary(None,keyValue)
+                if searchReturn ==False:
+                    print("No such key exits! ")
+                else:
+                    dictionary =self._conditionInstance.deleteDictionary(keyValue)
+                    print(f"Your dictionary has been updated: {dictionary}")
             if choice ==5:
                 break
 

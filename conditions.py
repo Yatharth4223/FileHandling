@@ -25,6 +25,7 @@ class Conditions:
                 #TODO: exception handling here  if value is invalid raise invalid value error
                 if self._repitition <=1 and index>-1:
                     return list(self.getDictionary().keys())[index]
+                #if it doesn't exist then index remains -1
                 else:
                     return False
             else:
@@ -38,15 +39,10 @@ class Conditions:
             self._repitition = 0
             return "No dictionary exists!"
 
-
-    #def updateDictionary(self,key,values)
-    def updateDictionary(self,key,values):
-        pass
-
-
     #def deleteDictionary(self,key,values)
-    def deleteDictionary(self,key,values):
-        pass
+    def deleteDictionary(self,key):
+        del self.getDictionary()[key]
+        return self.getDictionary() 
 
     #def getDictionary(self):
     def getDictionary(self):
