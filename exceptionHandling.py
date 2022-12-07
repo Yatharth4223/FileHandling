@@ -1,0 +1,2 @@
+class NoDictionaryError(Exception):
+    pass
